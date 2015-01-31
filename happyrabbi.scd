@@ -40,7 +40,7 @@ s.boot;
 )
 
 {
-  b = Buffer.read(s, "/Users/mikesolomon/Desktop/fichier_olivier_10c.aiff");
+  q = Buffer.read(s, "/Users/mikesolomon/Desktop/fichier_olivier_10c.aiff");
 }
 
 
@@ -49,11 +49,11 @@ s.boot;
 		Routine {
 100.do({|x|
 		var dur = 0.05 + 0.5.rand;
-		var sp = b.numFrames * 1.0.rand;
+		var sp = q.numFrames * 1.0.rand;
 20.rand.do({|y|
 var spd = 0.5 + 1.0.rand;
-				Synth.new("buffer_reader_pshift", [\out, 0, \bufnum, b, \startpos, sp, \duration, dur, \speed, spd, \shift, 1.2 + 0.5.rand, \vol, 0.4]);
-	Synth.new("buffer_reader", [\out, 0, \bufnum, b, \startpos, sp, \duration, dur, \speed, spd]);
+				Synth.new("buffer_reader_pshift", [\out, 0, \bufnum, q, \startpos, sp, \duration, dur, \speed, spd, \shift, 1.2 + 0.5.rand, \vol, 0.4]);
+	Synth.new("buffer_reader", [\out, 0, \bufnum, q, \startpos, sp, \duration, dur, \speed, spd]);
 		dur.wait;
 		});
 });}.play;
